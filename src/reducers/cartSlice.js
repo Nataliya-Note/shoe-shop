@@ -30,9 +30,11 @@ const cartSlice = createSlice({
       const hasItem = state.items.findIndex(
         (item) => item.id === id && item.size === size
       );
-      hasItem === -1
-        ? state.items.push(action.payload)
-        : (state.items[hasItem].count += count);
+      if(hasItem !== -1) {
+        state.items[hasItem].count += count;
+        return;
+      }
+      state.items.push(action.payload);
     },
     removeFromCart: (state, action) => {
       const { id, size } = action.payload;

@@ -9,7 +9,7 @@ export const saveToLocalStorage = (key, state) => {
 export const loadFromLocalStorage = (key) => {
   try {
     const stateStr = localStorage.getItem(key);
-    return stateStr ? JSON.parse(stateStr) : undefined;
+    return stateStr && JSON.parse(stateStr);
   } catch (e) {
     console.error(e);
     return undefined;

@@ -121,7 +121,7 @@ export default function ItemFull({ id }) {
                 <p>
                   Размеры в наличии:
                   {data.sizes
-                    .filter((size) => size.avalible)
+                    .filter((size) => size.available)
                     .map((item) => (
                       <span
                         className={
@@ -135,7 +135,7 @@ export default function ItemFull({ id }) {
                       </span>
                     ))}
                 </p>
-                {data.sizes.filter((size) => size.avalible).length !== 0 && (
+                {data.sizes.filter((size) => size.available).length !== 0 && (
                   <p>
                     Количество:
                     <span className="btn-group btn-group-sm pl-2">
@@ -160,7 +160,7 @@ export default function ItemFull({ id }) {
                   </p>
                 )}
               </div>
-              {data.sizes.filter((size) => size.avalible).length !== 0 && (
+              {data.sizes.filter((size) => size.available).length !== 0 && (
                 <button
                   className="btn btn-danger btn-block btn-lg"
                   onClick={handleSubmit}
